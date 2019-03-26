@@ -42,7 +42,7 @@ gene_set = read.csv(paste(DataDir,"/Lhum_RefSeq.csv",sep=""))
 pheno_data <- read.csv(paste(DataDir,"/phenotypes_northland.csv",sep=""))
 data_rnaseq = read.csv(paste(DataDir,"/gene_count_matrix.csv",sep=""))
 
-ref_immune <- read.csv(paste(DataDir,"/lhum_immune_genes.csv",sep=""),na=TRUE,h=T); ref_immune <- unique(ref_immune[,c("LOC","Name","Pathway","Type","Comment")])
+ref_immune <- read.csv(paste(DataDir,"/File_S1_lhum_immune_genes.csv",sep=""),na=TRUE,h=T); ref_immune <- unique(ref_immune[,c("LOC","Name","Pathway","Type","Comment")])
 ref_candidates <- ref_immune
 ref_candidates$ref_gene_name <- paste("LOC",ref_candidates$LOC,sep="")
 
@@ -266,7 +266,7 @@ dev.copy2pdf(file=paste(FigDir,"/heatmap_PLS_selected_cp1_4.pdf",sep=""), width=
 ##### Correlations and principal components analysis ###################################################################################
 
 ### Data that isn't logged:
-data.df <- read.csv(paste(DataDir,"/Immune_qPCR.csv",sep=""),T)
+data.df <- read.csv(paste(DataDir,"/File_S2_Immune_qPCR.csv",sep=""),T)
 head(data.df)
 
 ### The Box-Cox family of scaled power transformations for variable x equals (x^(lambda)-1)/lambda for lambda not equal to 0, and log(x) if lambda = 0. 
